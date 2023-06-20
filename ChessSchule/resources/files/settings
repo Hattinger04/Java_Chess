@@ -1,0 +1,10 @@
+#Usersettings
+#Sat Jul 24 12:01:45 CEST 2021
+PlaySoundEffects=false
+Theme=AOT
+VolumeIngameSounds=0.64
+LegalMoves=true
+PlayMusic=false
+VolumePlaylist=0.64
+IP=localhost
+Port=8888

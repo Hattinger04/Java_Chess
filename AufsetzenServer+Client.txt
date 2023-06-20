@@ -1,0 +1,59 @@
+====================================	
+=	  CHESS ENGINE: 	   =	
+====================================
+
+
+Programm aufsetzen:
+	Client: 
+	Programm importieren
+	Dem BuildPath die im jar Folder gesetzten jar (guava) hinzufuegen
+	JavaFx installieren
+
+	Server:
+	Programm importieren
+	Dem BuildPath die im jar Folder gesetzten jar (mysql) hinzufuegen
+	Eine neue MySQL Datenbank erstellen mit Code aus der database.sql in 
+		src/mysql/database.sql
+	
+	Gegebenenfalls die IP / den Port in dem Client / Server ändern, mithilfe
+	der settings / ServerSettings Datei
+
+Programm ausfuehren: 
+	Client Main Klasse ausfuehren
+	Server Main Klasse ausfuehren
+
+	Server Connection vom Client aufbauen im Loginfenster
+
+Programm erklaert: 
+	
+	data: Schickt Daten an den Client / schreibt in die Settingsdatei
+	
+	gui:
+	 brettAllerBretter: GUI fuer das Schachbrett
+	 design: 
+	  buttons: 	Zeigt die Buttons an und jedes Panel Ã¼berschreibt ihre eigene Methode doWhenClicked(),
+			welche bei einem Click auf das Panel aufgerufen wird.
+	
+	  innerPanel:	Zeigt die Panels auf unserem StartFrame dar, welche jeweils wieder JPanels aus dem
+			buttons Package verwendet
+	
+	 uhr: 	Wird am Schachbrett verwendet, um die Zeit darzustellen
+	logik: 
+	 board: 	Besitzen alle Information Ã¼ber das Schachbrett
+	
+	 figuren: 	Jede Figur erbt von der Figurenklasse, wo sich jede Figur seine legalen Zuege berechnet, 
+			indem man jedes Feld in Reihen weiterzÃ¤hlt 
+			==> 	wenn ein Bauer einen Zug nach vorne machen will, ist sein legaler Zug 8 Felder weiter 
+				zu gehen, wenn er einen Bauernsprung machen will, wird er 16 Felder weiter gehen
+				==> Keine Loesung mit 2 Dimensionalem Array mit [8][8] 
+				    sondern mit 1 Dimensionalem Array mit [64]
+	
+	 player:Speichert alle Infortmationen ueber die Spieler, wobei alle legalen ZÃ¼ge aller Figuren berechnet werden
+		und auch das Recht auf die Rochade ermittelt wird. 
+		Auch die Move Klasse befindet sich hier, wobei hier auch zwischen vielen verschiedenen MoveArten unterschieden werden
+	 
+	  ai:	Berechnet mit einem Algorithmus den Zug, falls mit dem Computer gespielt wird 
+
+	sounds: Spielt Musik ab
+
+	tests: Testet mein Programm
